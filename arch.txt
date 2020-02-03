@@ -1,0 +1,68 @@
+models: 
+    user: {
+        id
+        login,
+        hash
+    }
+    notes: {
+        id,
+        user_id,
+        text - maxLength = 1000
+        updatedAt,
+        createdAt,
+        sharedLink
+    }
+
+/ - Инфо о приложении, указание запроса для help
+
+api/help - список команд, требуемые аргументы
+
+// неавторизованные запросы 
+
+post api/auth/login - на входе логин, пароль, на выходе токен
+post api/auth/register - на входе логин, пароль, на выходе токен 
+get api/auth/logout - Удаление токена
+
+api/note/:link - просмотр текста заметки по ссылке
+
+
+// авторизованные запросы - юзер определяется из передаваемого токена
+
+api/notes/create - создание новой заметки с указанным текстом
+api/notes - список все заметок пользователя
+api/notes/10 - список последних 10 заметок пользователя
+api/notes/edit/:id - изменение текста заметки с указанным ИДом
+api/notes/delete/:id - удаление заметки с указанным ИДом
+api/notes/share/:id - генерация ссылки для заметки 
+api/notes/unshare/:id - удаление ссылки для заметки
+
+token = argon шифр. 
+
+app/
+    routes/
+        notes/
+            create.js
+            getAll.js
+            getLast.js
+            edit.js
+            delete.js
+            share.js
+            unshare.js
+        auth/
+            login.js
+            register.js
+            logout.js
+        notes.route.js
+        auth.route.js
+    config/
+        config.js
+    database/
+        dbConnect.js
+    tests/
+        notes.test.js
+        auth.test.js
+    handlers/
+        errors.handler.js
+
+1. Создание архитектуры - 40 мин.
+2. Понимание создания, верификации хеша с помощью crypto - 46мин

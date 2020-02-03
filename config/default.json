@@ -1,0 +1,11 @@
+{
+    "serverPort": 3000,
+    "mysql":{
+        "user": "wazzup_user",
+        "host": "localhost",
+        "password": "wazzup_password",
+        "database": "notes_wazzup",
+        "connectionLimit": 1000
+    },
+    "secret": "lnkasd072lI@to82178O*@!*2182"
+}

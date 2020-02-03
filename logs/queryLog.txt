@@ -1,0 +1,77 @@
+[2020-2-3 10:21:15]: 
+ select 1;
+
+[2020-2-3 10:21:39]: 
+ select 1 from users;
+
+[2020-2-3 10:22:6]: 
+ select 1 from users;
+
+[2020-2-3 10:26:43]: 
+ undefined
+
+[2020-2-3 10:27:18]: 
+ undefined
+
+[2020-2-3 10:27:27]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d168d122bdca1e5a700dff136f2873a533058c1499488eb29877293029847a99f' );
+
+[2020-2-3 10:32:9]: 
+ INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+                  SELECT * FROM users WHERE uid = LAST_INSERT_ID();
+
+[2020-2-3 10:32:22]: 
+ INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+                  SELECT * FROM users WHERE id = LAST_INSERT_ID();
+
+[2020-2-3 10:33:27]: 
+ INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); SELECT * FROM users WHERE id = LAST_INSERT_ID();
+
+[2020-2-3 10:37:48]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); SELECT * FROM users WHERE id = LAST_INSERT_ID();
+
+[2020-2-3 10:38:33]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); SELECT * FROM users WHERE id = LAST_INSERT_ID();
+
+[2020-2-3 10:41:43]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); 
+                  SELECT * FROM users WHERE users.id = LAST_INSERT_ID();
+
+[2020-2-3 10:42:7]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); 
+                  SELECT * FROM users WHERE users.id = LAST_INSERT_ID();
+
+[2020-2-3 10:42:55]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); 
+                  SELECT * FROM users WHERE users.id = LAST_INSERT_ID();
+
+[2020-2-3 10:44:13]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 10:44:36]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 10:45:13]: 
+ INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 10:45:43]: 
+ INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 10:45:52]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 10:45:55]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 11:8:42]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 11:9:51]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 11:10:1]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-3 11:10:13]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
