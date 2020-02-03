@@ -75,3 +75,47 @@
 [2020-2-3 11:10:13]: 
  INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
 
+[2020-2-3 12:33:13]: 
+ 
+    CREATE TABLE IF NOT EXISTS `users` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `login` varchar(50) NOT NULL,
+        `hash` varchar(250) NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `login` (`login`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  
+    CREATE TABLE IF NOT EXISTS `notes` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` varchar(255) NOT NULL,
+        `text` text NOT NULL,
+        `updatedAt` datetime DEFAULT NULL,
+        `createdAt` datetime NOT NULL,
+        `shared` tinyint(1) DEFAULT NULL,
+        PRIMARY KEY (`id`),
+        KEY `notes_ibfk_1` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+[2020-2-3 12:35:12]: 
+ 
+    CREATE TABLE IF NOT EXISTS `users` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `login` varchar(50) NOT NULL,
+        `hash` varchar(250) NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `login` (`login`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  
+    CREATE TABLE IF NOT EXISTS `notes` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` varchar(255) NOT NULL,
+        `text` text NOT NULL,
+        `updatedAt` datetime DEFAULT NULL,
+        `createdAt` datetime NOT NULL,
+        `shared` tinyint(1) DEFAULT NULL,
+        PRIMARY KEY (`id`),
+        KEY `notes_ibfk_1` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+

@@ -43,4 +43,6 @@ function sendQuery ( query) {
     });
 }
 
-module.exports = { sendQuery }
+function closePool() { pool.end() }
+
+module.exports = { sendQuery, closePool }
