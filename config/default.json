@@ -7,5 +7,8 @@
         "database": "notes_wazzup",
         "connectionLimit": 1000
     },
-    "secret": "lnkasd072lI@to82178O*@!*2182"
+    "secret": "lnkasd072lI@to82178O*@!*2182",
+    "tokenSecret": "jo9fG@&(!O812f8!O^f",
+    "tokenExpired": "1h",
+    "blackListExpired": 3600
 }

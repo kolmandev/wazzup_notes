@@ -9,7 +9,8 @@ const pool = mysql.createPool({
     database        : mysqlConfig.database,
     host            : mysqlConfig.host,
     user            : mysqlConfig.user,
-    multipleStatements: true
+    dateStrings     : true,
+    multipleStatements: true,
 });
 
 function sendQuery ( query) {
@@ -44,5 +45,7 @@ function sendQuery ( query) {
 }
 
 function closePool() { pool.end() }
+
+//sendQuery('TRUNCATE users;');
 
 module.exports = { sendQuery, closePool }

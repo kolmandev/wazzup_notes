@@ -1,121 +1,92 @@
-[2020-2-3 10:21:15]: 
- select 1;
+[2020-2-4 13:9:24]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND shared = "true";
 
-[2020-2-3 10:21:39]: 
- select 1 from users;
+[2020-2-4 13:9:28]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '2' AND shared = "true";
 
-[2020-2-3 10:22:6]: 
- select 1 from users;
+[2020-2-4 13:9:30]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-3 10:26:43]: 
- undefined
+[2020-2-4 13:9:32]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '3' AND shared = "true";
 
-[2020-2-3 10:27:18]: 
- undefined
+[2020-2-4 13:9:42]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
 
-[2020-2-3 10:27:27]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d168d122bdca1e5a700dff136f2873a533058c1499488eb29877293029847a99f' );
+[2020-2-4 13:10:13]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '3' AND shared = "true";
 
-[2020-2-3 10:32:9]: 
- INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
-                  SELECT * FROM users WHERE uid = LAST_INSERT_ID();
+[2020-2-4 13:10:17]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-3 10:32:22]: 
- INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
-                  SELECT * FROM users WHERE id = LAST_INSERT_ID();
+[2020-2-4 13:12:5]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-3 10:33:27]: 
- INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); SELECT * FROM users WHERE id = LAST_INSERT_ID();
+[2020-2-4 13:12:7]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-3 10:37:48]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); SELECT * FROM users WHERE id = LAST_INSERT_ID();
+[2020-2-4 13:12:9]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '3' AND shared = "true";
 
-[2020-2-3 10:38:33]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); SELECT * FROM users WHERE id = LAST_INSERT_ID();
+[2020-2-4 13:12:17]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-3 10:41:43]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); 
-                  SELECT * FROM users WHERE users.id = LAST_INSERT_ID();
+[2020-2-4 13:21:15]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-3 10:42:7]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); 
-                  SELECT * FROM users WHERE users.id = LAST_INSERT_ID();
+[2020-2-4 13:21:17]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
 
-[2020-2-3 10:42:55]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' ); 
-                  SELECT * FROM users WHERE users.id = LAST_INSERT_ID();
+[2020-2-4 13:21:58]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman2', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
 
-[2020-2-3 10:44:13]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:22:33]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 8; 
 
-[2020-2-3 10:44:36]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:23:52]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND shared = "true";
 
-[2020-2-3 10:45:13]: 
- INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:23:56]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-3 10:45:43]: 
- INSERT INTO users ( id, login, hash ) VALUES ( uuid(), 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:24:17]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 8, 'Hello, this is my new note', '2020-02-04 13:24:17.188', '2020-02-04 13:24:17.188', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
 
-[2020-2-3 10:45:52]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:24:29]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 8; 
 
-[2020-2-3 10:45:55]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:24:36]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
 
-[2020-2-3 11:8:42]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:25:5]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 8;
 
-[2020-2-3 11:9:51]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:25:38]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 8;
 
-[2020-2-3 11:10:1]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:25:39]: 
+ UPDATE notes SET `updatedAt` = '2020-02-04 13:25:39.650', `text` = 'Hello, this is my updated note', `shared` = 'true' WHERE id = '1' AND user_id = 8;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 8;
 
-[2020-2-3 11:10:13]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-4 13:27:30]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
 
-[2020-2-3 12:33:13]: 
- 
-    CREATE TABLE IF NOT EXISTS `users` (
-        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
-        `login` varchar(50) NOT NULL,
-        `hash` varchar(250) NOT NULL,
-        PRIMARY KEY (`id`),
-        UNIQUE KEY `login` (`login`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-  
-    CREATE TABLE IF NOT EXISTS `notes` (
-        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
-        `user_id` varchar(255) NOT NULL,
-        `text` text NOT NULL,
-        `updatedAt` datetime DEFAULT NULL,
-        `createdAt` datetime NOT NULL,
-        `shared` tinyint(1) DEFAULT NULL,
-        PRIMARY KEY (`id`),
-        KEY `notes_ibfk_1` (`user_id`)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+[2020-2-4 13:31:48]: 
+ SELECT text FROM notes WHERE id = '4' AND shared = "true";
 
+[2020-2-4 13:31:55]: 
+ SELECT text FROM notes WHERE id = '1' AND shared = "true";
 
-[2020-2-3 12:35:12]: 
- 
-    CREATE TABLE IF NOT EXISTS `users` (
-        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
-        `login` varchar(50) NOT NULL,
-        `hash` varchar(250) NOT NULL,
-        PRIMARY KEY (`id`),
-        UNIQUE KEY `login` (`login`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-  
-    CREATE TABLE IF NOT EXISTS `notes` (
-        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
-        `user_id` varchar(255) NOT NULL,
-        `text` text NOT NULL,
-        `updatedAt` datetime DEFAULT NULL,
-        `createdAt` datetime NOT NULL,
-        `shared` tinyint(1) DEFAULT NULL,
-        PRIMARY KEY (`id`),
-        KEY `notes_ibfk_1` (`user_id`)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+[2020-2-4 13:32:0]: 
+ SELECT text FROM notes WHERE id = '2' AND shared = "true";
 
+[2020-2-4 13:32:37]: 
+ SELECT text FROM notes WHERE id = '2' AND shared = "true";
+
+[2020-2-4 13:32:39]: 
+ SELECT text FROM notes WHERE id = '1' AND shared = "true";
+
+[2020-2-4 13:52:5]: 
+ SELECT text FROM notes WHERE id = '1' AND shared = "true";
 

@@ -1,6 +1,8 @@
 const { sendQuery, closePool } = require('./database/connection');
 
 const query = `
+    DROP TABLE IF EXISTS users, notes ;
+
     CREATE TABLE IF NOT EXISTS \`users\` (
         \`id\` int(255) unsigned NOT NULL AUTO_INCREMENT,
         \`login\` varchar(50) NOT NULL,
@@ -15,7 +17,7 @@ const query = `
         \`text\` text NOT NULL,
         \`updatedAt\` datetime DEFAULT NULL,
         \`createdAt\` datetime NOT NULL,
-        \`shared\` tinyint(1) DEFAULT NULL,
+        \`shared\` ENUM('true','false') DEFAULT 'false',
         PRIMARY KEY (\`id\`),
         KEY \`notes_ibfk_1\` (\`user_id\`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

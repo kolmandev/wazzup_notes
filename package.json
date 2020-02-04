@@ -4,17 +4,20 @@
   "description": "App for storing user notes with sharing ability",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "init": "node init"
+    "server": "nodemon app.js",
+    "dev": "concurrently \"npm run redis\" \"npm run server\" ",
+    "init": "node init",
+    "redis": "redis/src/redis-server"
   },
   "author": "Kolman Dev",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.1.0",
     "config": "^3.2.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
