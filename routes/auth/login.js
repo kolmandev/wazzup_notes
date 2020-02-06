@@ -6,6 +6,9 @@ module.exports = async ( req, res ) => {
     try {
         const { login, password } = req.body;
         const user = await getUser( login );
+        if ( !user ) {
+            return res.status(401).json({ type: 'error', message: 'Access denied' });
+        }
         const passwordHash = createPasswordHash( password );
         if ( user.hash === passwordHash ) {
             removeFromBlackList( user.id );

@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-const config = require('config');
-const PORT = config.get('serverPort') || 3000;
 
 app.use( express.json({ extended: true }));
 
@@ -14,4 +12,4 @@ app.use('/', ( req, res ) => {
     res.status(404).json({ type: 'error', message: 'Invalid request, read help' });
 })
 
-app.listen(PORT, () => console.log(`Server started on ${ PORT } port`));
+module.exports = app;

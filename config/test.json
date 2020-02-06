@@ -1,0 +1,14 @@
+{
+    "serverPort": 3000,
+    "mysql":{
+        "user": "wazzup_user",
+        "host": "localhost",
+        "password": "wazzup_password",
+        "database": "notes_wazzup_test",
+        "connectionLimit": 1000
+    },
+    "secret": "testsecret",
+    "tokenSecret": "testtokensecret",
+    "tokenExpired": "1h",
+    "blackListExpired": 3600
+}

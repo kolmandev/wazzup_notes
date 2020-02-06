@@ -1,92 +1,1261 @@
-[2020-2-4 13:9:24]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND shared = "true";
+[2020-2-5 16:7:3]: 
+ 
+    DROP TABLE IF EXISTS users, notes ;
 
-[2020-2-4 13:9:28]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '2' AND shared = "true";
+    CREATE TABLE IF NOT EXISTS `users` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `login` varchar(50) NOT NULL,
+        `hash` varchar(250) NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `login` (`login`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  
+    CREATE TABLE IF NOT EXISTS `notes` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` varchar(255) NOT NULL,
+        `text` text NOT NULL,
+        `updatedAt` datetime DEFAULT NULL,
+        `createdAt` datetime NOT NULL,
+        `shared` ENUM('true','false') DEFAULT 'false',
+        PRIMARY KEY (`id`),
+        KEY `notes_ibfk_1` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-[2020-2-4 13:9:30]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-4 13:9:32]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '3' AND shared = "true";
+[2020-2-5 16:19:40]: 
+ 
+    DROP TABLE IF EXISTS users, notes ;
 
-[2020-2-4 13:9:42]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
+    CREATE TABLE IF NOT EXISTS `users` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `login` varchar(50) NOT NULL,
+        `hash` varchar(250) NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `login` (`login`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  
+    CREATE TABLE IF NOT EXISTS `notes` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` varchar(255) NOT NULL,
+        `text` text NOT NULL,
+        `updatedAt` datetime DEFAULT NULL,
+        `createdAt` datetime NOT NULL,
+        `shared` ENUM('true','false') DEFAULT 'false',
+        PRIMARY KEY (`id`),
+        KEY `notes_ibfk_1` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-[2020-2-4 13:10:13]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '3' AND shared = "true";
 
-[2020-2-4 13:10:17]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
+[2020-2-5 17:1:3]: 
+ 
+    DROP TABLE IF EXISTS users, notes ;
 
-[2020-2-4 13:12:5]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
+    CREATE TABLE IF NOT EXISTS `users` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `login` varchar(50) NOT NULL,
+        `hash` varchar(250) NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `login` (`login`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  
+    CREATE TABLE IF NOT EXISTS `notes` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` varchar(255) NOT NULL,
+        `text` text NOT NULL,
+        `updatedAt` datetime DEFAULT NULL,
+        `createdAt` datetime NOT NULL,
+        `shared` ENUM('true','false') DEFAULT 'false',
+        PRIMARY KEY (`id`),
+        KEY `notes_ibfk_1` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-[2020-2-4 13:12:7]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
 
-[2020-2-4 13:12:9]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '3' AND shared = "true";
+[2020-2-5 17:2:8]: 
+ TRUNCATE users; TRUNCATE notes;
 
-[2020-2-4 13:12:17]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
+[2020-2-5 17:11:22]: 
+ TRUNCATE users; TRUNCATE notes;
 
-[2020-2-4 13:21:15]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
+[2020-2-5 17:11:23]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
 
-[2020-2-4 13:21:17]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
+[2020-2-5 17:12:12]: 
+ TRUNCATE users; TRUNCATE notes;
 
-[2020-2-4 13:21:58]: 
- INSERT INTO users ( login, hash ) VALUES ( 'kolman2', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+[2020-2-5 17:12:12]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
 
-[2020-2-4 13:22:33]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 8; 
+[2020-2-5 17:22:28]: 
+ TRUNCATE users; TRUNCATE notes;
 
-[2020-2-4 13:23:52]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND shared = "true";
+[2020-2-5 17:22:28]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
 
-[2020-2-4 13:23:56]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '4' AND shared = "true";
+[2020-2-5 17:22:28]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
 
-[2020-2-4 13:24:17]: 
- INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 8, 'Hello, this is my new note', '2020-02-04 13:24:17.188', '2020-02-04 13:24:17.188', 'false' );
+[2020-2-5 17:23:26]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 17:23:26]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 17:23:26]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 17:34:11]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 17:34:11]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 17:34:11]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 17:35:5]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 17:35:5]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 17:35:5]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 17:35:5]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 17:36:33]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 17:36:33]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 17:36:33]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 17:36:33]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 17:38:52]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 17:38:53]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 17:38:53]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 17:38:53]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 17:38:53]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 18:14:35]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 18:14:35]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 18:14:35]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 18:14:35]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 18:14:35]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 18:15:12]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 18:15:12]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 18:15:12]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 18:15:12]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 18:15:12]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 18:15:13]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:50:46]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:50:47]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:50:47]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:50:47]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:50:47]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:50:47]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:51:29]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:51:29]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:51:29]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:51:29]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:51:29]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:51:30]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:53:51]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:53:51]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:53:51]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:53:51]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:53:51]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:53:52]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:53:52]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:55:13]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:55:13]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:55:13]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:55:13]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:55:13]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:55:13]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:55:13]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:55:37]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:55:37]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:55:37]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:55:37]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:55:37]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:55:37]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:56:10]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:56:10]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:56:10]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:56:10]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:56:10]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:56:10]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:56:10]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:58:1]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:58:1]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:58:1]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 21:58:1]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:58:1]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 21:58:2]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 21:58:2]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:0:32]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:0:32]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:0:32]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:0:32]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:0:33]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:0:33]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:0:33]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:0:33]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:0:33]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:00:33.889', '2020-02-05 22:00:33.889', 'false' );
               SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
 
-[2020-2-4 13:24:29]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 8; 
+[2020-2-5 22:0:33]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
 
-[2020-2-4 13:24:36]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
+[2020-2-5 22:1:31]: 
+ TRUNCATE users; TRUNCATE notes;
 
-[2020-2-4 13:25:5]: 
- DELETE FROM notes WHERE id = '1' AND user_id = 8;
+[2020-2-5 22:1:31]: 
+ TRUNCATE users; TRUNCATE notes;
 
-[2020-2-4 13:25:38]: 
- DELETE FROM notes WHERE id = '1' AND user_id = 8;
+[2020-2-5 22:1:31]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
 
-[2020-2-4 13:25:39]: 
- UPDATE notes SET `updatedAt` = '2020-02-04 13:25:39.650', `text` = 'Hello, this is my updated note', `shared` = 'true' WHERE id = '1' AND user_id = 8;
-              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 8;
+[2020-2-5 22:1:31]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
 
-[2020-2-4 13:27:30]: 
- SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 7; 
+[2020-2-5 22:1:31]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
 
-[2020-2-4 13:31:48]: 
- SELECT text FROM notes WHERE id = '4' AND shared = "true";
+[2020-2-5 22:1:31]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:01:31.858', '2020-02-05 22:01:31.858', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
 
-[2020-2-4 13:31:55]: 
+[2020-2-5 22:1:31]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:1:31]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:1:31]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:1:31]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:1:49]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:1:50]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:1:50]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:1:50]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:1:50]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:1:50]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:1:50]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:3:34]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:3:34]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:3:34]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:3:34]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:3:34]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:3:35]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:3:35]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:3:35]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:3:35]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:03:35.330', '2020-02-05 22:03:35.330', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:3:35]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:4:18]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:4:18]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:4:18]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:4:18]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:4:18]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:4:19]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:4:19]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:4:19]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:4:19]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:04:19.600', '2020-02-05 22:04:19.600', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:4:19]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:7:39]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:7:39]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:7:39]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:7:39]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:7:39]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:7:40]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:7:40]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:7:40]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:7:40]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:07:40.226', '2020-02-05 22:07:40.226', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:7:40]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:13:58]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:13:58]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:13:58]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:13:58]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:13:58]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:13:59]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:13:59]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:13:59]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:13:59]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:13:59.629', '2020-02-05 22:13:59.629', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:13:59]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:14:51]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:14:51]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:14:52]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:14:52]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:14:52]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:14:52]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:14:52]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:14:52]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:14:52]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:14:52.756', '2020-02-05 22:14:52.756', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:14:52]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:25:59]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:25:59]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:25:59]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:25:59]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:25:59]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:25:59.478', '2020-02-05 22:25:59.478', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:25:59]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:25:59]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:25:59]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:25:59]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:25:59]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:26:43]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:26:43]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:26:43]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:26:43]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:26:44]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:26:44.040', '2020-02-05 22:26:44.040', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:26:44]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:26:44]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:26:44]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:26:44]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:26:44]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:27:36]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:27:36]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:27:36]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:27:36]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:27:36]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:27:36.783', '2020-02-05 22:27:36.783', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:27:36]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:27:36]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:27:37]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:27:37]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:27:37]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:29:6]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:29:7]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:29:7]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:29:7]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:29:7]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:29:7]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:29:7]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:29:8]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:29:8]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:29:08.067', '2020-02-05 22:29:08.067', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:29:8]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:29:31]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:29:31]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:29:31]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:29:31]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:29:31]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:29:32]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:29:32]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:29:32]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:29:32]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:29:32.446', '2020-02-05 22:29:32.446', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:29:32]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:29:32]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 22:29:32.551', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-5 22:29:32]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 22:29:32.567', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 22:45:49]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:45:49]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:45:49]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:45:49]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:45:49]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:45:49]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:45:49]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:45:49]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 22:45:50]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 4; 
+
+[2020-2-5 22:45:50]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 4;
+
+[2020-2-5 22:48:23]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:48:23]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:48:23]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:48:23]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:48:23]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:48:23]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:48:23]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:48:23]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 22:48:23]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 4; 
+
+[2020-2-5 22:48:23]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 4;
+
+[2020-2-5 22:51:34]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:51:34]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:51:34]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:51:34]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:51:34]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:51:34]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:51:34]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:51:34]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:51:34]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 22:51:34]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:51:34]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:51:34.973', '2020-02-05 22:51:34.973', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:51:34]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:51:35]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 2; 
+
+[2020-2-5 22:51:35]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 22:51:35.048', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-5 22:51:35]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 22:51:35.064', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 22:51:35]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 2;
+
+[2020-2-5 22:51:35]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 22:51:35]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:52:26]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:52:26]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:52:26]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:52:26]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:52:26]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 22:52:26]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:52:27]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 22:52:27]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 22:52:27]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 22:52:27]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:52:27]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 22:52:27.649', '2020-02-05 22:52:27.649', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 22:52:27]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 22:52:27]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 2; 
+
+[2020-2-5 22:52:27]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 22:52:27.718', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-5 22:52:27]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 22:52:27.734', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 22:52:27]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 2;
+
+[2020-2-5 22:52:27]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 22:52:27]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:1:1]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:1:1]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:1:1]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:1:1]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:1:1]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:1:2]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:1:2]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:1:3]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:1:3]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 23:1:3]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:1:3]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 23:01:03.196', '2020-02-05 23:01:03.196', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 23:1:3]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:1:3]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 2; 
+
+[2020-2-5 23:1:3]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:01:03.275', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-5 23:1:3]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:01:03.287', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:1:3]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 2;
+
+[2020-2-5 23:1:3]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:1:3]: 
+ SELECT text FROM notes WHERE id = '8' AND shared = "true";
+
+[2020-2-5 23:1:3]: 
  SELECT text FROM notes WHERE id = '1' AND shared = "true";
 
-[2020-2-4 13:32:0]: 
+[2020-2-5 23:1:3]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:2:1]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:2:2]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:2:2]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:2:2]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:2:2]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:2:2]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:2:2]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:2:2]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:2:2]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 23:2:3]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:2:3]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 23:02:03.034', '2020-02-05 23:02:03.034', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 23:2:3]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 2, 'Hello world', '2020-02-05 23:02:03.052', '2020-02-05 23:02:03.052', 'true' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 23:2:3]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:2:3]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 2; 
+
+[2020-2-5 23:2:3]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:02:03.171', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-5 23:2:3]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:02:03.183', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:2:3]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 2;
+
+[2020-2-5 23:2:3]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:2:3]: 
+ SELECT text FROM notes WHERE id = '8' AND shared = "true";
+
+[2020-2-5 23:2:3]: 
+ SELECT text FROM notes WHERE id = '1' AND shared = "true";
+
+[2020-2-5 23:2:3]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:3:53]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:3:53]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:3:53]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:3:53]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:3:53]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:3:54]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:3:54]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:3:54]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:3:54]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 23:3:55]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:3:55]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 23:03:55.059', '2020-02-05 23:03:55.059', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 23:3:55]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:3:55]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 2; 
+
+[2020-2-5 23:3:55]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 2, 'Hello world', '2020-02-05 23:03:55.134', '2020-02-05 23:03:55.134', 'true' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 23:3:55]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:03:55.200', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-5 23:3:55]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:03:55.212', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:3:55]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 2;
+
+[2020-2-5 23:3:55]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:3:55]: 
+ SELECT text FROM notes WHERE id = '8' AND shared = "true";
+
+[2020-2-5 23:3:55]: 
  SELECT text FROM notes WHERE id = '2' AND shared = "true";
 
-[2020-2-4 13:32:37]: 
+[2020-2-5 23:3:55]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:4:28]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:4:29]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:4:29]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:4:29]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:4:29]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-5 23:4:29]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:4:29]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-5 23:4:30]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-5 23:4:30]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-5 23:4:30]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:4:30]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-05 23:04:30.160', '2020-02-05 23:04:30.160', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 23:4:30]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-5 23:4:30]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 2; 
+
+[2020-2-5 23:4:30]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 2, 'Hello world', '2020-02-05 23:04:30.202', '2020-02-05 23:04:30.202', 'true' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-5 23:4:30]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:04:30.245', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-5 23:4:30]: 
+ UPDATE notes SET `updatedAt` = '2020-02-05 23:04:30.256', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:4:30]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 2;
+
+[2020-2-5 23:4:30]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-5 23:4:30]: 
+ SELECT text FROM notes WHERE id = '8' AND shared = "true";
+
+[2020-2-5 23:4:30]: 
  SELECT text FROM notes WHERE id = '2' AND shared = "true";
 
-[2020-2-4 13:32:39]: 
- SELECT text FROM notes WHERE id = '1' AND shared = "true";
+[2020-2-5 23:4:30]: 
+ TRUNCATE users; TRUNCATE notes;
 
-[2020-2-4 13:52:5]: 
- SELECT text FROM notes WHERE id = '1' AND shared = "true";
+[2020-2-6 9:46:47]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'kolman', 'f639fe3fd1bdf22c11fbe8ad824f471b1635b65a0bfd349c162d0f1aff69603d' );
+
+[2020-2-6 9:47:12]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 7, 'Hello, this is my new note', '2020-02-06 09:47:12.913', '2020-02-06 09:47:12.913', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-6 9:48:3]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-6 9:48:3]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-6 9:48:3]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-6 9:48:3]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-6 9:48:3]: 
+ SELECT id, hash FROM users WHERE login = 'newuser';
+
+[2020-2-6 9:48:3]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-6 9:48:4]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-6 9:48:4]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'newuser', '3f4b9d60c8cf7e2f065f923cc0fbc41537c534adf0af9d6668c70cb201b8d1be' );
+
+[2020-2-6 9:48:4]: 
+ INSERT INTO users ( login, hash ) VALUES ( 'seconduser', '4fa3a7bc9bd07161ffe04c45d72473d2cfd69dbe60b7689040fac59af49054c7' );
+
+[2020-2-6 9:48:4]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-6 9:48:4]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 1, 'Hello world', '2020-02-06 09:48:04.593', '2020-02-06 09:48:04.593', 'false' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-6 9:48:4]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 1; 
+
+[2020-2-6 9:48:4]: 
+ SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE user_id = 2; 
+
+[2020-2-6 9:48:4]: 
+ INSERT INTO notes ( user_id, text, updatedAt, createdAt, shared ) VALUES ( 2, 'Hello world', '2020-02-06 09:48:04.637', '2020-02-06 09:48:04.637', 'true' );
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = last_insert_id();
+
+[2020-2-6 9:48:4]: 
+ UPDATE notes SET `updatedAt` = '2020-02-06 09:48:04.677', `text` = 'Some text' WHERE id = '8' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '8' AND user_id = 1;
+
+[2020-2-6 9:48:4]: 
+ UPDATE notes SET `updatedAt` = '2020-02-06 09:48:04.689', `text` = 'Edited text' WHERE id = '1' AND user_id = 1;
+              SELECT id, text, updatedAt, createdAt, shared FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-6 9:48:4]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 2;
+
+[2020-2-6 9:48:4]: 
+ DELETE FROM notes WHERE id = '1' AND user_id = 1;
+
+[2020-2-6 9:48:4]: 
+ SELECT text FROM notes WHERE id = '8' AND shared = "true";
+
+[2020-2-6 9:48:4]: 
+ SELECT text FROM notes WHERE id = '2' AND shared = "true";
+
+[2020-2-6 9:48:4]: 
+ TRUNCATE users; TRUNCATE notes;
+
+[2020-2-6 9:54:39]: 
+ 
+    DROP TABLE IF EXISTS users, notes ;
+
+    CREATE TABLE IF NOT EXISTS `users` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `login` varchar(50) NOT NULL,
+        `hash` varchar(250) NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `login` (`login`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  
+    CREATE TABLE IF NOT EXISTS `notes` (
+        `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` varchar(255) NOT NULL,
+        `text` text NOT NULL,
+        `updatedAt` datetime DEFAULT NULL,
+        `createdAt` datetime NOT NULL,
+        `shared` ENUM('true','false') DEFAULT 'false',
+        PRIMARY KEY (`id`),
+        KEY `notes_ibfk_1` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 

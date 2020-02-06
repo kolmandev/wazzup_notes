@@ -16,10 +16,10 @@ module.exports = async ( req, res, next ) => {
         req.user = user;
         next();
     } catch (e) {
-        console.error(e);
         if ( e.type === 'tokenError' ) {
             return res.status(401).json({ type: 'error', message: 'Invalid token' });
         }
+        console.error(e);
         return res.status(500).json({ type: 'error', message: 'Something wrong' });
     }
 }

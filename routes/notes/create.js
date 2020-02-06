@@ -15,4 +15,4 @@ module.exports = async ( req, res ) => {
     }
 }
 
-// curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjh9LCJpYXQiOjE1ODA3OTczMTgsImV4cCI6MTU4MDgwMDkxOH0.vjPBpArgSyVvv27GJ_5d3bnlyWoqW32bwy4f0GcC0Rc" -d "{\"text\":\"Hello, this is my new note\"}" localhost:3000/api/notes/create
+// curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjd9LCJpYXQiOjE1ODA5NTcyMDcsImV4cCI6MTU4MDk2MDgwN30.AQn2b9jWDmgh6s8clj9zk7giGv6Y1Hg3LdATvHIwxf0" -d "{\"text\":\"Hello, this is my new note\"}" localhost:3000/api/notes/create

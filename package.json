@@ -2,24 +2,26 @@
   "name": "notes_api",
   "version": "1.0.0",
   "description": "App for storing user notes with sharing ability",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "server": "nodemon app.js",
-    "dev": "concurrently \"npm run redis\" \"npm run server\" ",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
     "init": "node init",
-    "redis": "redis/src/redis-server"
+    "init_test": "NODE_ENV=test node init.js",
+    "test": "jest"
   },
   "author": "Kolman Dev",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.1.0",
     "config": "^3.2.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
-    "redis": "^2.8.0"
+    "redis": "^2.8.0",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
+    "jest": "^25.1.0",
     "nodemon": "^2.0.2"
   }
 }
